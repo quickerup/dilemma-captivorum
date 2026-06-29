@@ -1,0 +1,17 @@
+{
+  "name": "prisoners-dilemma-bot",
+  "version": "1.0.0",
+  "description": "Simple Prisoner's Dilemma Telegram Bot with buttons",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "deploy:prod": "wrangler deploy --env production",
+    "tail": "wrangler tail",
+    "kv:list": "wrangler kv namespace list"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "wrangler": "^3.75.0"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "ton-prisoners-dilemma-bot",
+  "main": "src/index.js",
+  "compatibility_date": "2024-11-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "kv_namespaces": [
+    {
+      "binding": "GAME_KV",
+      "id": "REPLACE_AFTER: wrangler kv namespace create GAME_KV",
+      "preview_id": "REPLACE_AFTER: wrangler kv namespace create GAME_KV --preview"
+    }
+  ],
+  "vars": {
+    "NETWORK": "testnet",
+    "TON_API_ENDPOINT": "https://testnet.toncenter.com/api/v2",
+    "ADMISSION_FEE_NANO": "100000000"
+  },
+  "triggers": {
+    "crons": ["*/2 * * * *"]
+  },
+  "env": {
+    "production": {
+      "name": "ton-prisoners-dilemma-bot-prod",
+      "vars": {
+        "NETWORK": "mainnet",
+        "TON_API_ENDPOINT": "https://toncenter.com/api/v2",
+        "ADMISSION_FEE_NANO": "100000000"
+      },
+      "kv_namespaces": [
+        {
+          "binding": "GAME_KV",
+          "id": "REPLACE_AFTER: wrangler kv namespace create GAME_KV (prod)"
+        }
+      ]
+    }
+  }
+}
